@@ -8,7 +8,7 @@
 <li class="has-line-data" data-line-start="11" data-line-end="12">Usar o arquivo <strong>.env</strong></li>
 <li class="has-line-data" data-line-start="12" data-line-end="13">Suporte ao <strong>cUrl</strong></li>
 <li class="has-line-data" data-line-start="13" data-line-end="14">Suporte a requisições <strong>SOAP</strong></li>
-<li class="has-line-data" data-line-start="14" data-line-end="16">Key e Secret do Omie (<a href="https://ajuda.omie.com.br/pt-BR/articles/499061-obtendo-a-chave-de-acesso-para-integracoes-de-api">Criar Keys</a>)</li>
+<li class="has-line-data" data-line-start="14" data-line-end="16">Key e Secret do Omie (<a target="_Blank" href="https://ajuda.omie.com.br/pt-BR/articles/499061-obtendo-a-chave-de-acesso-para-integracoes-de-api">Criar Keys</a>)</li>
 </ul>
 <blockquote>
 <p class="has-line-data" data-line-start="16" data-line-end="17"><em>Recomendado uso do <strong>Laravel.</strong></em></p>
@@ -26,7 +26,7 @@
 <p class="has-line-data" data-line-start="29" data-line-end="30">Nunca testado, se conseguir, avise-me para por na documentação</p>
 <h2 class="code-line" data-line-start=31 data-line-end=32 ><a id="Apis_suportadas_31"></a>Apis suportadas</h2>
 <ul>
-<li class="has-line-data" data-line-start="33" data-line-end="35"><a href="https://app.omie.com.br/api/v1/produtos/op/">Ordem de Produção</a></li>
+<li class="has-line-data" data-line-start="33" data-line-end="35"><a target="_Blank" href="https://app.omie.com.br/api/v1/produtos/op/">Ordem de Produção</a></li>
 </ul>
 <h2 class="code-line" data-line-start=35 data-line-end=36 ><a id="Ordem_de_Produo_35"></a>Ordem de Produção</h2>
 <p class="has-line-data" data-line-start="36" data-line-end="38"><strong>Nome da Classe:</strong> OmieOrdemProducao<br>
