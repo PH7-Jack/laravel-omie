@@ -18,7 +18,7 @@ class OmieOrdemProducao
     // montar url base
     public function omieBase($method, $params)
     {
-        return  $url = 'https://app.omie.com.br/api/v1/produtos/op/?JSON={"call":"' . $method . '","app_key":"' . env('OMIE_KEY') . '","app_secret":"' . env('OMIE_SECRET') . '","param":[' . $params . ']}';
+        return 'https://app.omie.com.br/api/v1/produtos/op/?JSON={"call":"' . $method . '","app_key":"' . env('OMIE_KEY') . '","app_secret":"' . env('OMIE_SECRET') . '","param":[' . $params . ']}';
     }
 
     public function incluir()
