@@ -73,4 +73,28 @@ class OmieClientes
         $url = self::omieBase("ListarClientes", json_encode($params));
         return WebHelpers::getUrlResponse($url);
     }
+    
+    public static function ConsultarCliente($params)
+    {
+        $url = self::omieBase("ConsultarCliente", json_encode($params));
+        return WebHelpers::getUrlResponse($url);
+    }
+
+    public static function ListarClientesTags($tags_array)
+    {
+        $tags = [];
+        foreach ($tags_array as $tag) {
+            array_push($tags, ['tag' => $tag]);
+        }
+        $params = [
+            'pagina' => 1,
+            'registros_por_pagina' => 500,
+            'apenas_importado_api' => 'N',
+            'clientesFiltro' => [
+                'tags' => $tags
+            ]
+        ];
+        $url = self::omieBase("ListarClientes", json_encode($params));
+        return WebHelpers::getUrlResponse($url);
+    }
 }
