@@ -34,6 +34,13 @@ class OmieOrdemProducao
         $url = $this->omieBase("ExcluirOrdemProducao", $params);
         return WebHelpers::getUrlResponse($url);
     }
+    
+    public static function listar($page, $rows, $sortBy, $descending, $api = 'N')
+    {
+        $params = '{"pagina":' . $page . ',"registros_por_pagina":"' . $rows . '", "apenas_importado_api": "' . $api . '",  "ordem_decrescente":"' . $descending . '", "ordenar_por":"' . $sortBy . '"}';
+        $url = self::omieBase("ListarOrdemProducao", $params);
+        return WebHelpers::getUrlResponse($url);
+    }
 
     public function concluir()
     {
