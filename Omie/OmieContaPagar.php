@@ -75,4 +75,36 @@ class OmieContaPagar
         $url = self::omieBase("AlterarContaPagar", json_encode($params));
         return WebHelpers::getUrlResponse($url);
     }
+    
+     public static function updateValorDocumento($cIdContaPagar, $value)
+    {
+        $url = self::omieBase("AlterarContaPagar", json_encode(["codigo_lancamento_integracao" => $cIdContaPagar, "valor_documento" => $value]));
+        return WebHelpers::getUrlResponse($url);
+    }
+    
+    public static function updateDate($cIdContaPagar, $column, $value)
+    {
+        $url = self::omieBase("AlterarContaPagar", json_encode(["codigo_lancamento_integracao" => $cIdContaPagar, $column => $value]));
+        return WebHelpers::getUrlResponse($url);
+    }
+    
+    public static function Listar($page = 1, $rows = 500,  $date_from = '', $date_at = '', $status = '', $desc = "S", $api = 'N')
+    {
+        //status can be "PAGO","LIQUIDADO","ATRASADO","PAGTO_PARCIAL" | CANCELADO,EMABERTO,VENCEHOJE,AVENCER
+        $params = [
+            'pagina' => $page,
+            'registros_por_pagina' => $rows,
+            'apenas_importado_api' => $api,
+            'ordem_descrescente' => $desc,
+            'filtrar_por_status' => $status ? `[$status]` : ''
+        ];
+        if ($date_from) {
+            $date_from = $date_from == 'AUTO' ? WebHelpers::firstMonth() : $date_from;
+            $date_at = $date_at == 'AUTO' ? WebHelpers::lastMonth() : $date_at;
+            $params['filtrar_por_data_de'] = $date_from;
+            $params['filtrar_por_data_ate'] = $date_at;
+        }
+        $url = self::omieBase("ListarContasPagar", json_encode($params));
+        return WebHelpers::getUrlResponse($url);
+    }
 }
